@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="/style.css">
+  <head>
+    <meta charset="utf-8" />
+    <title>Products | Edit Product</title>
+  </head>
+  <body>
+    <h1>Edit Product | <%=product.name%></h1>
+    <form action="/products/<%=productId%>?_method=PUT" method="POST">
+      <!--  NOTE: the form is pre-populated with values for the server-->
+      <input type="text" name="name" placeholder="name" /><br />
+      <input type="text" name="img"placeholder="img (url)"/><br />
+      <input type="text" name="description" placeholder="description"/><br />
+      <input type="text" name="price" placeholder="price"/><br/>
+      <input type="text" name="qty" placeholder="quantity"/><br/>
+      <input type="submit" value="Submit Changes" />
+    </form>
+    <!-- Footer -->
+  </body>
+</html>

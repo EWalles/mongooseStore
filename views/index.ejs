@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <meta charset="utf-8" />
+    <title>Product Index</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/products/new">Add a New Item</a>
+    </nav>
+    <h1>Products Index</h1>
+    <ul>
+        <% products.forEach(product=> { %>
+                <h2><%= product.name %> </h2>
+                <a href="/products/<%= product._id %>"><img src="<%= product.img%>"></a>
+                <p>Price: <%= product.price%></p>
+                <p>Quantity: <%= product.qty%></p>
+        <% }) %> 
+    </ul>
+</body>
+</html>

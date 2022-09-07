@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="/style.css">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Item</title>
+	</head>
+	<body>
+		<nav>
+			<a href="/products">Back to Products Index</a>
+		</nav>
+		<h1><%=product.name %></h1>
+		<img src="<%= product.img%>"><br />
+		<p><%= product.description %></p><br />
+        <p>Price: <%= product.price%></p><br />
+        <p>Quantity: <%= product.qty%></p><br />
+        <form action="/products/<%=productId%>/edit">
+        <input type='submit' value="Edit"/>
+        </form>
+	</body>
+</html>
