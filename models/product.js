@@ -4,8 +4,8 @@ const productSchema = new mongoose.Schema({
   name: {type: String, required: true},
   description: String,
   img: String,
-  price: {type: String, required: true},
-  qty: {type: Number, required: true},
+  price: Number,
+  qty: Number
 })
 
 const products = mongoose.model('Product', productSchema)

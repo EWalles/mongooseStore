@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     <meta charset="utf-8" />
     <title>Product Index</title>
 </head>
 
 <body>
+    <div class="header">
     <nav>
-        <a href="/products/new">Add a New Item</a>
+        <h1>Sweet Treats</h1>
+        <form  action="/products/new">
+            <input class= "new" type="submit" value="New Item" />
+        </form>
     </nav>
-    <h1>Products Index</h1>
-    <ul>
+</div> 
+    <div class="products">
         <% products.forEach(product=> { %>
-                <h2><%= product.name %> </h2>
+            <div class="ind_prod">
+                <h2 class="product_name"><%= product.name %> </h2>
                 <a href="/products/<%= product._id %>"><img src="<%= product.img%>"></a>
-                <p>Price: <%= product.price%></p>
+                <p>Price: $<%= product.price%></p>
                 <p>Quantity: <%= product.qty%></p>
+                <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+                    <input class= "delete" type="submit" value="Delete">
+                </form>
+            </div>
         <% }) %> 
-    </ul>
+    </div>
 </body>
 </html>

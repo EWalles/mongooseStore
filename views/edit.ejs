@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="/style.css">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/style.css">
     <meta charset="utf-8" />
     <title>Products | Edit Product</title>
   </head>
   <body>
+    <div class="page_head">
+    <a href="/products">Back to Index</a>
     <h1>Edit Product | <%=product.name%></h1>
-    <form action="/products/<%=productId%>?_method=PUT" method="POST">
+    </div>
+    <form class="new_form"action="/products/<%=productId%>?_method=PUT" method="POST">
       <!--  NOTE: the form is pre-populated with values for the server-->
-      <input type="text" name="name" placeholder="name" /><br />
-      <input type="text" name="img"placeholder="img (url)"/><br />
-      <input type="text" name="description" placeholder="description"/><br />
-      <input type="text" name="price" placeholder="price"/><br/>
-      <input type="text" name="qty" placeholder="quantity"/><br/>
+      <input type="text" name="name" value="<%=product.name%>" placeholder="name" /><br />
+      <input type="text" name="img" value="<%=product.img%>" placeholder="img (url)"/><br />
+      <input type="text" name="description" value="<%=product.description%>" placeholder="description"/><br />
+      <input type="text" name="price" value="<%=product.price%>" placeholder="price"/><br/>
+      <input type="text" name="qty" value="<%=product.qty%>" placeholder="quantity"/><br/>
       <input type="submit" value="Submit Changes" />
     </form>
-    <!-- Footer -->
   </body>
 </html>

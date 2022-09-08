@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="/style.css">
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/style.css">
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Item</title>
 	</head>
 	<body>
+		<div class="page_head">
 		<nav>
 			<a href="/products">Back to Products Index</a>
 		</nav>
 		<h1><%=product.name %></h1>
+	</div>
+	<div class="show">
 		<img src="<%= product.img%>"><br />
-		<p><%= product.description %></p><br />
-        <p>Price: <%= product.price%></p><br />
-        <p>Quantity: <%= product.qty%></p><br />
+		<p><%= product.description %></p>
+        <p>Price: $<%= product.price%></p>
+        <p>Quantity: <%= product.qty%></p>
+		<% if (product.qty <= 0) { %>
+			<p>Out of Stock! Check back later...</p>
+		<% } %>
+	</div>
+		<% if (product.qty > 0) { %>		
+			<form action="/products/<%=productId%>/buy?_method=PUT" method="POST">
+			<input class="delete"type="submit" value="Buy">
+		</form>
+		<% } %>
         <form action="/products/<%=productId%>/edit">
-        <input type='submit' value="Edit"/>
+        <input class="delete"type='submit' value="Edit"/>
         </form>
 	</body>
 </html>
