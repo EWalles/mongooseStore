@@ -9,6 +9,6 @@ const userSchema = new mongoose.Schema({
   shoppingCart:{}
 })
 
-const products = mongoose.model('Product', productSchema)
+const user = mongoose.model('User', userSchema)
 
-module.exports = products;
+module.exports = user;
